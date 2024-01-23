@@ -3,10 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Countries from './countries';
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App></App>,
+    children:[
+      {
+        path: "/countries",
+        element: <Countries></Countries>,
+      },
+    ]
+  },
+ 
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+  <RouterProvider router={router} />
   
 );
 
