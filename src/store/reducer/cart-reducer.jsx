@@ -3,7 +3,6 @@ import products from "../../pro";
 const initialstate = {
     cartitem: [],
     allproducts:products,
-    isimg:false,
 }
 const cartReducer = (state = initialstate, action) => {
     if (action.type === "ADDCART") {
